@@ -1,0 +1,57 @@
+{
+  "exampleEntries": [
+    {
+      "image": {
+        "alt": "Site Screenshot"
+      },
+      "title": "BRADHACKER.GITHUB.IO",
+      "description": "This site was built purely using react and was originally scaffolded using Facebook's create-react-app."
+    }
+  ],
+  "resourceEntries": [
+    {
+      "image": {
+        "alt": "Meteor Logo"
+      },
+      "title": "Meteor",
+      "links": [
+        {
+          "href": "https://www.meteor.com/",
+          "icon": "globe"
+        },
+        {
+          "href": "https://www.facebook.com/meteorjs/",
+          "icon": "facebook"
+        },
+        {
+          "href": "https://twitter.com/meteorjs?lang=en",
+          "icon": "twitter"
+        },
+        {
+          "href": "https://www.youtube.com/user/MeteorVideos",
+          "icon": "youtube"
+        }
+      ]
+    },
+    {
+      "image": {
+        "alt": "React Logo"
+      },
+      "title": "React",
+      "links": [
+        {
+          "href": "https://facebook.github.io/react/",
+          "icon": "globe"
+        },
+        {
+          "href": "https://www.facebook.com/react",
+          "icon": "facebook"
+        },
+        {
+          "href": "https://twitter.com/reactjs",
+          "icon": "twitter"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "exampleEntries": [
+    {
+      "image": {
+        "alt": "P5-NN Screenshot"
+      },
+      "title": "P5-NN",
+      "description": "A javascript neural network library created for use with p5.js.",
+      "link": "https://github.com/BradHacker/p5-nn"
+    },
+    {
+      "image": {
+        "alt": "Smart Rockets Screenshot"
+      },
+      "title": "SMART ROCKETS",
+      "description": "Rocket propelled objects use evolution to make their way to a target.",
+      "link": "https://github.com/BradHacker/smart-rockets"
+    },
+    {
+      "image": {
+        "alt": "NN-Genetic Screenshot"
+      },
+      "title": "NN-GENETIC",
+      "description": "Organisms movements are controlled by neural networks that learn using evolution.",
+      "link": "https://github.com/BradHacker/nn-genetic"
+    }
+  ],
+  "resourceEntries": [
+    {
+      "image": {
+        "alt": "alt"
+      },
+      "title": "The Nature Of Code",
+      "links": [
+        {
+          "href": "http://natureofcode.com/",
+          "icon": "globe"
+        }
+      ]
+    },
+    {
+      "image": {
+        "alt": "alt"
+      },
+      "title": "The Coding Train",
+      "links": [
+        {
+          "href": "https://www.youtube.com/user/shiffman",
+          "icon": "youtube"
+        }
+      ]
+    }
+  ]
+}
