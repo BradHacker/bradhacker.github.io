@@ -1,19 +1,19 @@
 {
-    "name": "BradHacker",
-    "short_name": "BradHacker",
-    "icons": [
-        {
-            "src": "/android-chrome-192x192.png?v=Jy7RxpzQ8e",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/android-chrome-512x512.png?v=Jy7RxpzQ8e",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+  "name": "BradHacker",
+  "short_name": "BradHacker",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png?v=Jy7RxpzQ8e",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png?v=Jy7RxpzQ8e",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1C2331",
+  "background_color": "#212529",
+  "display": "standalone"
 }
