@@ -2,3 +2,7 @@
   color: red
 - name: update
   color: yellow
+- name: cybersecurity
+  color: purple
+- name: research
+  color: green
