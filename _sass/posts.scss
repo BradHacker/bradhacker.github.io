@@ -13,7 +13,7 @@
 
   .post-preview-title {
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.25rem;
     width: 100%;
   }
 
@@ -32,6 +32,7 @@
   z-index: 10;
   transform: scale(1.05);
   background: #1e1e1e;
+  color: inherit !important;
 }
 
 .post-page {
@@ -93,6 +94,10 @@
 
     .post-content {
       font-weight: 300;
+
+      img {
+        width: 100%;
+      }
     }
   }
 
