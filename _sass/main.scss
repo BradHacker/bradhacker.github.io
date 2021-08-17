@@ -1,0 +1,64 @@
+@import "posts";
+
+html {
+  background: #121212;
+  font-family: "Roboto Mono", monospace;
+  color: white;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.container {
+  padding: 3rem 5rem;
+
+  .intro {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    .headshot {
+      height: 16rem;
+      margin-right: 4rem;
+    }
+
+    .details {
+      flex: 1 0 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+
+      .name {
+        font-size: 4rem;
+      }
+    }
+
+    .socials {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+
+      a {
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        transition: all 0.15s ease-in-out;
+      }
+
+      a:hover {
+        color: rgba(255, 255, 255, 0.85);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

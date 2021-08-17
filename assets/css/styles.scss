@@ -1,0 +1,13 @@
+---
+---
+
+@import "variables";
+@import "utilities";
+@import "main";
+@import "github";
+
+{% for category in site.data.categories %}
+.category-{{ category.name }} {
+  color: ${{ category.color }}
+}
+{% endfor %}
