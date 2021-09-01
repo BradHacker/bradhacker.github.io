@@ -31,6 +31,7 @@ code {
   background: #373737;
   border-radius: 4px;
   padding: 4px;
+  overflow-x: scroll;
 }
 
 pre {
@@ -53,6 +54,25 @@ a {
 
 a:hover {
   color: $orange;
+}
+
+blockquote {
+  border-left: solid 4px white;
+  margin: 0;
+  padding: 0.75rem;
+  font-style: italic;
+
+  p {
+    margin: 0;
+  }
+
+  p:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
+}
+
+ul li {
+  margin-bottom: 0.5rem;
 }
 
 // -----
