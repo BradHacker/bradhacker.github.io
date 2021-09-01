@@ -88,8 +88,18 @@
 
     .post-title,
     .post-date,
-    .post-content {
+    .post-content,
+    .post-cover {
       width: 50%;
+    }
+
+    .post-cover {
+      max-height: 50vh;
+      object-fit: cover;
+    }
+
+    .post-title {
+      font-size: 2.5rem;
     }
 
     .post-content {

@@ -65,6 +65,10 @@ blockquote {
   p {
     margin: 0;
   }
+
+  p:not(:last-of-type) {
+    margin-bottom: 1rem;
+  }
 }
 
 ul li {

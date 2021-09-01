@@ -2,6 +2,7 @@
 layout: post
 title: "Basic Windows Reverse TCP Shells"
 categories: cybersecurity research
+cover: https://images.unsplash.com/photo-1544890225-2f3faec4cd60?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1525&q=80
 ---
 
 > This is a walkthrough of my research into generating basic Windows reverse shells.
@@ -14,25 +15,25 @@ Let's break this down into simple characteristics. We have a **Shell** which is 
 
 ## Shell
 
-A shell is simply an interactive process on a computer that allows the user to operate "commands" (which are just names of programs) that do certain operations, all without needing a Graphical User Interface (GUI).
+A shell is simply an interactive process on a computer which allows the user to operate "commands" (which are just names of programs) to do certain operations, all without needing a Graphical User Interface (GUI).
 
 ## Reverse
 
-Typically, when remotely accessing a machine (you don't have access to plug in a monitor, keyboard, mouse, etc.), the client (you) would initiate a connection the server. Now, don't get server confused with the tall stacks of loud computers, in this case by server I mean a program that is constantly running on a machine that listens for connections. However, in a reverse connection, this is where we swap roles. Now, the server is the client and you are the server. In other words, you have a program listening for any and all clients, compromised computers in this case, to connect to you.
+Typically, when remotely accessing a machine (you don't have physical access to plug in a monitor, keyboard, mouse, etc.), the client (you) would initiate a connection the server. Now, don't get server confused with the racks of loud computers that drive your electricity bill through the roof. In this case by server I mean a program which is constantly running on a machine and listens for connections. However, in a reverse connection, the roles are reversed. Now, the server is the client and you are the server. In other words, you have a program listening for any and all clients, compromised computers in this case, to connect to you.
 
 ## TCP
 
-This is part is simple, the communication protocol used is TCP. This is in comparison to using a UDP shell, which is another networking protocol. The key difference between a TCP connection and a UDP connection, is how the packets are handled. IN a UDP connection, we just send packets (or little chunks of data) to the server and we don't care if they ever get there. This is why UDP is more common for high-speed connections where real-time data is of the upmost importance. In a TCP connection, instead of just disregarding packets that never make it, we ask the machine on the other end to confirm, or _Acknowledge_ (ACK for short), our packet was received. So, TCP is in theory a "lossless" protocol, meaning every bit of data gets to our client regardless. Think streaming services when you think TCP, you wouldn't want to skip 10 seconds of your latest binge series just because the packets got lost, right?
+This is part is simple, the communication protocol used is TCP. This is in comparison to using UDP, which is another networking protocol. The key difference between a TCP connection and a UDP connection, is how the packets are handled. In a UDP connection, we just send packets (or little chunks of data) to the server and we don't care if they ever get there. This is why UDP is more common for high-speed connections where real-time data is of the upmost importance. In a TCP connection, instead of just disregarding packets which never make it to the destination, we ask the machine on the other end to confirm, or _Acknowledge_ (ACK for short), our packet was received. So, TCP is in theory a "lossless" protocol, meaning every bit of data gets to our client regardless of the lost packets. Think streaming services when you think TCP (we're going to ingore the fact that YouTube uses some UDP protocols for the sake of simplicity), you wouldn't want to skip 10 seconds of your latest binge series just because the packets got lost, right?
 
 # Generating The Payload
 
 First-off, the payload I'm referring to is a small binary (aka. program or executable) which is to deployed to a given machine. This payload ideally contains malicious content to give us remote access to the target machine.
 
-When starting off with the payload, I had a goal of attempting to generate a semi-legit scenario in which this shell could be deployed. So, I ran through some scenarios in my head and a situation my dad ran into came to mind. A few years back, on his old MacBook Pro 2011 (yes, they "aren't supposed to get viruses"), he fell for a simple [Update your Adobe Flash Player](https://www.intego.com/mac-security-blog/how-to-tell-if-adobe-flash-player-update-is-valid/) scam. So, I figured I would go with this scenario, as it obviously works (sorry pops).
+When starting off with the payload, I had a goal of attempting to generate a semi-legitimate scenario in which this shell could be deployed. So, I ran through some scenarios in my head and a situation my dad ran into came to mind. A few years back, on his old MacBook Pro 2011 (yes, they "aren't supposed to get viruses"), he fell for a simple [Update your Adobe Flash Player](https://www.intego.com/mac-security-blog/how-to-tell-if-adobe-flash-player-update-is-valid/) scam. So, I figured I would go with this scenario, as it obviously works (sorry pops).
 
 ## msfvenom
 
-In order fo us to generate the payload, we can use a tool called `msfvenom`, which is a part of the [Metasploit framework](https://www.metasploit.com/), and is a tool that can be used to generate malicious binary payloads. The full documentation of going through generating a payload can be found [here](https://www.offensive-security.com/metasploit-unleashed/binary-payloads/), but I will just be covering generating simple reverse TCP shells for Windows.
+In order for us to generate the payload, we can use a tool called `msfvenom`, a part of the [Metasploit framework](https://www.metasploit.com/), which is a tool which can be used to generate malicious payloads. The full documentation of going through generating a payload can be found [here](https://www.offensive-security.com/metasploit-unleashed/binary-payloads/), but I will just be covering generating simple reverse TCP shells for Windows.
 
 To get started, I simply used [Kali Linux](https://www.kali.org/) in a Virtual Machine (see how to set one up [here](https://www.kali.org/docs/virtualization/)) because it has the Metasploit Framework preinstalled and preconfigured for use.
 
@@ -93,9 +94,11 @@ Let's break this down piece by piece
 
 # Deploying the Payload
 
-Here we're going to try to spoof, or fake, the [Adobe Flash Player download page](https://get.adobe.com/flashplayer/), so sad to see you go :(.
+Here we're going to try to spoof, or fake, the [Adobe Flash Player download page](https://get.adobe.com/flashplayer/).
 
-> Note: since flash player has now been discontinues, you're going to have to find another site or find a copy of the webpage off of [The Wayback Machine](https://web.archive.org/web/20201008000104/https://get.adobe.com/flashplayer/). Some webpage modification may be necessary
+> Note: since flash player has now been discontinued, you're going to have to find another site or find a copy of the webpage off of [The Wayback Machine](https://web.archive.org/web/20201008000104/https://get.adobe.com/flashplayer/). Some webpage modification may be necessary.
+>
+> So sad to see you go :(
 
 ## Cloning and Hosting the Webpage
 
